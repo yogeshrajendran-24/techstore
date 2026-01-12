@@ -3,7 +3,7 @@ const products = [
     {
         id: 1,
         name: 'Wireless Headphones',
-        price: 79.99,
+        price: 89.99,
         description: 'Premium noise-canceling headphones',
         icon: '🎧'
     },
