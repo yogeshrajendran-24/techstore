@@ -1,0 +1,23 @@
+name: TechStore CI/CD
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Validate HTML
+        run: sudo apt-get install tidy -y && tidy -e index.html
+
+      - name: Build Docker image
+        run: docker build -t techstore .
+
+      - name: Run container test
+        run: docker run -d -p 8080:80 techstore
