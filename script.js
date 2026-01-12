@@ -24,7 +24,7 @@ const products = [
     {
         id: 4,
         name: 'Phone Case',
-        price: 24.99,
+        price: 20.99,
         description: 'Durable protective case',
         icon: '📱'
     },
