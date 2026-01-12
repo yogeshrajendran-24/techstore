@@ -27,5 +27,8 @@ jobs:
 
       - name: Push Docker Image
         run: |
-          docker tag techstore ${{ secrets.DOCKER_USERNAME }}/techstore
-          docker push ${{ secrets.DOCKER_USERNAME }}/techstore
+         docker tag techstore ${{ secrets.DOCKER_USERNAME }}/techstore:${{ github.run_number }}
+         docker push ${{ secrets.DOCKER_USERNAME }}/techstore:${{ github.run_number }}
+
+         docker tag techstore ${{ secrets.DOCKER_USERNAME }}/techstore:latest
+         docker push ${{ secrets.DOCKER_USERNAME }}/techstore:latest
