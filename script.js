@@ -17,7 +17,7 @@ const products = [
     {
         id: 3,
         name: 'USB-C Cable',
-        price: 12.99,
+        price: 15.99,
         description: 'Fast charging cable',
         icon: '🔌'
     },
