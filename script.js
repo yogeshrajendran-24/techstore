@@ -10,7 +10,7 @@ const products = [
     {
         id: 2,
         name: 'Smart Watch',
-        price: 199.99,
+        price: 189.99,
         description: 'Fitness tracking smartwatch',
         icon: '⌚'
     },
