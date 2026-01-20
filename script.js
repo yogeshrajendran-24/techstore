@@ -38,7 +38,7 @@ const products = [
     {
         id: 6,
         name: 'Power Bank',
-        price: 34.99,
+        price: 29.99,
         description: '20000mAh portable charger',
         icon: '🔋'
     }
