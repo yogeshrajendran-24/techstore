@@ -31,7 +31,7 @@ const products = [
     {
         id: 5,
         name: 'Screen Protector',
-        price: 9.99,
+        price: 11.99,
         description: 'Tempered glass protector',
         icon: '🛡️'
     },
