@@ -21,15 +21,6 @@ jobs:
     - name: Push Image
       run: docker push ${{ secrets.DOCKER_IMAGE }}/techstore:latest
 
-    - name: Copy to EC2
-      uses: appleboy/scp-action@master
-      with:
-        host: ${{ secrets.EC2_HOST }}
-        username: ubuntu
-        key: ${{ secrets.EC2_KEY }}
-        source: "techstore.tar"
-        target: "/home/ubuntu/"
-
     - name: Deploy on EC2
       uses: appleboy/ssh-action@master
       with:
@@ -37,7 +28,7 @@ jobs:
         username: ubuntu
         key: ${{ secrets.EC2_KEY }}
         script: |
-          docker load < techstore.tar
+          docker pull ${{ secrets.DOCKER_IMAGE }}/techstore:latest
           docker stop app || true
           docker rm app || true
-          docker run -d -p 80:80 --name app techstore
+          docker run -d -p 80:80 --name app ${{ secrets.DOCKER_IMAGE }}/techstore:latest
