@@ -16,7 +16,7 @@ jobs:
       run: docker build -t ${{ secrets.DOCKER_IMAGE }}/techstore:latest .
 
     - name: Docker Login
-      run: echo ${{ secrets.DOCKER_PASSWRD }}" | docker login -u "${{ secrets.DOCKER_IMAGE }}" --password-stdin  
+      run: echo ${{ secrets.DOCKER_PASSWRD }} | docker login -u ${{ secrets.DOCKER_IMAGE }} --password-stdin  
 
     - name: Push Image
       run: docker push ${{ secrets.DOCKER_IMAGE }}/techstore:latest
